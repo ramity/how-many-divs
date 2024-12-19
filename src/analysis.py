@@ -102,7 +102,7 @@ def plot_3d_scatter(df, x_col, y_col, z_col):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     
-    ax.scatter(df[x_col], df[y_col], df[z_col], c='blue', marker='o')
+    ax.scatter(df[x_col], df[y_col], df[z_col], c=df[z_col], marker='.', cmap='viridis')
     ax.set_xlabel(x_col)
     ax.set_ylabel(y_col + " (px)")
     ax.set_zlabel(z_col + " (ms)")

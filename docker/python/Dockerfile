@@ -6,7 +6,7 @@ RUN apt update
 
 RUN pip install --upgrade pip
 RUN pip install beautifulsoup4
-
+RUN pip install matplotlib
 RUN pip install pytest-playwright
 RUN playwright install-deps
 RUN playwright install

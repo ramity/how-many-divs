@@ -10,3 +10,7 @@ services:
       - "./src/:/root/src/"
       - "./docs/:/root/docs/"
       - "./data/:/root/data/"
+
+networks:
+  default:
+    name: how_many_divs

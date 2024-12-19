@@ -79,10 +79,6 @@ for url in performance_timings:
     }
     results.append(result)
 
-with open(results_path, "wb") as file:
-
-    pickle.dumps(results)
-
 with open(csv_path, "w") as file:
 
     writer = csv.DictWriter(file, fieldnames=result.keys())

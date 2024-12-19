@@ -5,7 +5,7 @@ More specifically, how many divs can a browser handle for the purposes of render
 I'd like to explore the idea of an IDE within a browser, but I'm jaded by a past experience.
 Once upon a time, I sought out to make a spreadsheets clone within a browser, but quickly found the need for a clever rendering scheme for it to work.
 It occured to me that I had never made reference to how Google implemented spreadsheets in a browser.
-Checking it would reveal, the canvas element, and thus brings us back to my previous delima.
+Checking it would reveal, the canvas element, and thus brings us back to my delima.
 Now, near the end of 2024, how many divs?
 
 # Signals
@@ -17,13 +17,11 @@ Now, near the end of 2024, how many divs?
 Through my research of lighthouse, it seems 1,000 - 1,500 are considered cutoffs for "ideal" DOM sizes.
 Google lighthouse discusses max of 60 child nodes and max depth of 32 per branch.
 
-# Testing
+# Possible Approaches
 
-Create a python script that generates static webpages.
-
-Create a html + js webpage that generates the same params as above, but using javascript to create the elements after pageload.
-
-Create a canvas based approach that handles memory
+- [x] Create a python script that generates static webpages.
+- [ ] Create a html + js webpage that generates the same params as above, but using javascript to create the elements after pageload.
+- [ ] Create a canvas based approach that handles memory
 
 # Implementation
 

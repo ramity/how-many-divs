@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import os
 
-template_path = "/root/src/template.html"
+template_path = "/root/data/template.html"
 
 def generate_divs(num_divs, height):
 

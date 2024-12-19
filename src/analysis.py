@@ -3,9 +3,8 @@ import pickle
 import re
 import csv
 
-cache_path = "performance-timings.pkl"
-results_path = "results.pkl"
-csv_path = "results.csv"
+cache_path = "/root/data/performance-timings.pkl"
+csv_path = "/root/data/results.csv"
 performance_timings = {}
 results = []
 

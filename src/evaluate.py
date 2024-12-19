@@ -2,14 +2,14 @@ from playwright.sync_api import sync_playwright
 import pickle
 import os
 
+# Init cache
+cache_path = "/root/data/performance-timings.pkl"
+performance_timings = {}
+
 with sync_playwright() as p:
 
     browser = p.chromium.launch(headless=True)
     context = browser.new_context()
-
-    # Init cache
-    cache_path = "performance-timings.pkl"
-    performance_timings = {}
 
     # Load file into context if it already exists
     if os.path.exists(cache_path):

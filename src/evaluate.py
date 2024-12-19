@@ -6,7 +6,7 @@ with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
     performance_timings = {}
 
-    for divs in range(1000, 10000, 100):
+    for divs in range(1000, 10100, 100):
         for height in range(1, 36):
 
             context = browser.new_context()

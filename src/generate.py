@@ -28,7 +28,7 @@ def generate_divs(num_divs, height):
         body.append(new_div)
 
     # Save the updated HTML to the output file
-    output_path = f"/root/rendered/{num_divs}-{height}px.html"
+    output_path = f"/root/docs/{num_divs}-{height}px.html"
     html = soup.prettify("utf-8")
     with open(output_path, "wb") as file:
         file.write(html)

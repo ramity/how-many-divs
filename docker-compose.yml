@@ -8,4 +8,4 @@ services:
     image: how_many_divs_python
     volumes:
       - "./src/:/root/src/"
-      - "./rendered/:/root/rendered/"
+      - "./docs/:/root/docs/"

@@ -12,7 +12,7 @@ with sync_playwright() as p:
             context = browser.new_context()
             page = context.new_page()
 
-            url = f"https://ramity.github.io/how-many-divs/{divs}-{height}.html"
+            url = f"https://ramity.github.io/how-many-divs/{divs}-{height}px"
             page.goto(url)
             performance_timings[url] = page.evaluate("() => performance.timing")
             print(f"{url} Performance Timing: {performance_timings[url]}")

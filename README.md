@@ -31,33 +31,43 @@ Create a canvas based approach that handles memory
 
 `evaluate.py` is a python script that leverages the playwright library to navigate to each static webpage and pulls the javascript performance timing metrics and stores the results into a performance-timings.pkl file.
 
-`performance-timings.pkl` contains an object following a key (URL) object (metrics object) scehma.
-
-- navigationStart - Marks the time when the navigation to the document started.
-This is the starting point for all other timing metrics.
-- unloadEventStart - Indicates the time immediately before the unload event of the previous document is fired, if applicable.
-- unloadEventEnd - Indicates the time immediately after the unload event of the previous document is completed.
-- redirectStart - Marks the time of the start of the first HTTP redirect, if any occurred.
-0 if there were no redirects.
-- redirectEnd - Marks the time of the completion of the last HTTP redirect, if any occurred.
-0 if there were no redirects.
-- fetchStart - Indicates when the browser started fetching the resource (before DNS lookup).
-- domainLookupStart - Marks the time just before the DNS lookup for the domain name starts.
-- domainLookupEnd - Marks the time immediately after the DNS lookup for the domain name is completed.
-- connectStart - Marks the time just before the connection to the server starts, including any required proxy negotiation.
-- connectEnd - Marks the time immediately after the connection to the server is established.
-Includes SSL handshake completion, if applicable.
-- secureConnectionStart - Marks the time when the SSL/TLS handshake starts.
-0 if the connection is not secure.
-- requestStart - Indicates the time when the browser sends the request for the document to the server.
-- responseStart - Marks the time immediately after the browser receives the first byte of the response from the server.
-- responseEnd - Marks the time immediately after the browser receives the last byte of the response.
-- domLoading - Indicates when the browser starts parsing the HTML document.
-- domInteractive - Marks the time when the browser has finished parsing the HTML document and the DOMContentLoaded event is about to be fired.
-- domContentLoadedEventStart - Marks the time just before the DOMContentLoaded event is fired.
-- domContentLoadedEventEnd - Marks the time just after the DOMContentLoaded event is completed.
-- domComplete - Indicates the time when the HTML document and all subresources are completely loaded and parsed.
-- loadEventStart - Marks the time just before the load event of the document is fired.
-loadEventEnd - Marks the time immediately after the load event is completed.
-
 `analysis.py` is a python script that looks in the `performance-timings.pkl` file described above and creates a plot on how div counts and div heights impact render performance.
+
+# Experimental Results
+
+`performance-timings.pkl` contains an object following a key (URL) object (metrics object) scehma.
+- connectStart
+- secureConnectionStart
+- unloadEventEnd
+- domainLookupStart
+- domainLookupEnd
+- responseStart
+- connectEnd
+- responseEnd
+- requestStart
+- domLoading
+- redirectStart
+- loadEventEnd
+- domComplete
+- navigationStart
+- loadEventStart
+- domContentLoadedEventEnd
+- unloadEventStart
+- redirectEnd
+- domInteractive
+- fetchStart
+- domContentLoadedEventStart
+
+`results.csv` contains calculated metrics containing the independent variables.
+- Div Count
+- Div Height
+- DNS Lookup Time
+- TCP Connect Time
+- Secure Connection Time
+- Request Time (TTFB)
+- Response Time
+- Time to DOM Interactive
+- Time to DOMContentLoaded
+- Time to DOM Complete
+- Load Event Duration
+- Total Page Load Time

@@ -1,10 +1,12 @@
-import matplotlib
-import pickle
 import re
+import pickle
 import csv
+import pandas
+import matplotlib.pyplot as plt
 
 cache_path = "/root/data/performance-timings.pkl"
 csv_path = "/root/data/results.csv"
+figure_path = "/root/data/3d-scatter-plot.png"
 performance_timings = {}
 results = []
 
@@ -44,8 +46,6 @@ for url in performance_timings:
     divs, height = extract_divs_and_height(url)
     metrics = performance_timings[url]
 
-    print(divs, height)
-
     # Variables describing various events
     dnsLookupTime = metrics['domainLookupEnd'] - metrics['domainLookupStart']  # DNS lookup duration
     tcpConnectTime = metrics['connectEnd'] - metrics['connectStart']           # TCP connection duration
@@ -83,3 +83,30 @@ with open(csv_path, "w") as file:
     writer = csv.DictWriter(file, fieldnames=result.keys())
     writer.writeheader()
     writer.writerows(results)
+
+dataframe = pandas.DataFrame(results)
+
+def plot_3d_scatter(df, x_col, y_col, z_col):
+    """
+    Creates a 3D scatter plot from a pandas DataFrame.
+
+    Parameters:
+        df (pd.DataFrame): The DataFrame containing the data.
+        x_col (str): The column name for the x-axis.
+        y_col (str): The column name for the y-axis.
+        z_col (str): The column name for the z-axis.
+    """
+    if x_col not in df.columns or y_col not in df.columns or z_col not in df.columns:
+        raise ValueError("Specified columns must exist in the DataFrame.")
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    
+    ax.scatter(df[x_col], df[y_col], df[z_col], c='blue', marker='o')
+    ax.set_xlabel(x_col)
+    ax.set_ylabel(y_col)
+    ax.set_zlabel(z_col)
+
+    plt.savefig(figure_path)
+
+plot_3d_scatter(dataframe, "Div Count", "Div Height", "Time to DOM Complete")

@@ -36,9 +36,9 @@ Google lighthouse discusses max of 60 child nodes and max depth of 32 per branch
 
 `generate.py` is a python script that generates 1000 to 10000 (@100 increments; inclusive) divs, at 1 to 35 (@1 increments; inclusive) heights rendering a total of 100 * 35 = 3,500 static webpages.
 
-`evaluate.py` is a python script that leverages the playwright library to navigate to each static webpage and pulls the javascript performance timing metrics and stores the results into a performance-timings.pkl file.
+`evaluate.py` is a python script that leverages the playwright library to navigate to each static webpage and pulls the javascript performance timing metrics and stores the results into the `performance-timings.pkl` file.
 
-`analysis.py` is a python script that looks in the `performance-timings.pkl` file described above and creates a plot on how div counts and div heights impact render performance.
+`analysis.py` is a python script that looks in the `performance-timings.pkl` file and creates a plot on how div counts and div heights impact render performance.
 
 # Experimental Results
 
@@ -78,3 +78,5 @@ Google lighthouse discusses max of 60 child nodes and max depth of 32 per branch
 - Time to DOM Complete
 - Load Event Duration
 - Total Page Load Time
+
+`3d-scatter-plot.png` the plot viewable at the top of this README.

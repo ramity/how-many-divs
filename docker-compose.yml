@@ -1,0 +1,11 @@
+services:
+
+  how_many_divs_python:
+    container_name: how_many_divs_python
+    build:
+      context: ./
+      dockerfile: docker/python/Dockerfile
+    image: how_many_divs_python
+    volumes:
+      - "./src/:/root/src/"
+      - "./rendered/:/root/rendered/"

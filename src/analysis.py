@@ -3,8 +3,8 @@ import pickle
 
 cache_path = "performance-timings.pkl"
 performance_timings = {}
-with open(cache_path, "r") as file:
-    pickle.dump(performance_timings, file)
+with open(cache_path, "rb") as file:
+    pickle.load(performance_timings, file)
 
 for url, metrics in performance_timings:
 

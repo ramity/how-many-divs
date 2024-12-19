@@ -9,3 +9,4 @@ services:
     volumes:
       - "./src/:/root/src/"
       - "./docs/:/root/docs/"
+      - "./data/:/root/data/"

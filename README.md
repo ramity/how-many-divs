@@ -8,10 +8,11 @@
 
 # Purpose
 
-This project is a stepping stone project that explores the limit of modern browsers.
+This project is a stepping stone project that explores the limit of modernday rendering.
 More specifically, how many divs can a browser handle for the purposes of rendering file text.
 I'd like to explore the idea of an IDE within a browser, but I'm jaded by a past experience.
 Once upon a time, I sought out to make a spreadsheets clone within a browser, but quickly found the need for a clever rendering scheme for it to work.
+It was clear it wasn't going to be as simple as making a div for each cell.
 It occured to me that I had never made reference to how Google implemented spreadsheets in a browser.
 Checking it would reveal, the canvas element, and thus brings us back to my delima.
 Now, near the end of 2024, how many divs?

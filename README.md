@@ -1,6 +1,10 @@
-# How Many Divs?
+<h1 align="center">
+    How Many Divs?
+</h1>
 
-![Div Count, Div Height, Time to DOM Complete](data/3d-scatter-plot.png)
+<p align="center">
+  <img src="data/3d-scatter-plot.png">
+</p>
 
 # Purpose
 

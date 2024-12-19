@@ -104,8 +104,8 @@ def plot_3d_scatter(df, x_col, y_col, z_col):
     
     ax.scatter(df[x_col], df[y_col], df[z_col], c='blue', marker='o')
     ax.set_xlabel(x_col)
-    ax.set_ylabel(y_col)
-    ax.set_zlabel(z_col)
+    ax.set_ylabel(y_col + " (px)")
+    ax.set_zlabel(z_col + " (ms)")
 
     plt.savefig(figure_path)
 

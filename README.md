@@ -1,3 +1,7 @@
+# How Many Divs?
+
+![Div Count, Div Height, Time to DOM Complete](data/3d-scatter-plot.png)
+
 # Purpose
 
 This project is a stepping stone project that explores the limit of modern browsers.

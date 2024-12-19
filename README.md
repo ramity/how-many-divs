@@ -17,14 +17,11 @@ It occured to me that I had never made reference to how Google implemented sprea
 Checking it would reveal, the canvas element, and thus brings us back to my delima.
 Now, near the end of 2024, how many divs?
 
-# Signals
-
-`performance.timing` values are pulled to assess the performance for each page. Values are added to a performance-timings.pkl file for later analysis and visualization.
-
 # Research
 
 Through my research of lighthouse, it seems 1,000 - 1,500 are considered cutoffs for "ideal" DOM sizes.
 Google lighthouse discusses max of 60 child nodes and max depth of 32 per branch.
+This research will explore the 1k to 10k range.
 
 # Possible Approaches
 
